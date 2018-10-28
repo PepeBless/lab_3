@@ -22,5 +22,30 @@ namespace lab_3
         {
 
         }
+
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cut();
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Copy();
+        }
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Paste();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Delete();
+        }
+
+        private void sellectAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SelectAll();
+        }
     }
 }

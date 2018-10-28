@@ -32,11 +32,68 @@ namespace lab_3
         {
             //Создаем новый экземпляр формы  frm
             blank frm = new blank();
+            frm.DocName = "Untitled " + ++openDocuments;
+            frm.Text = frm.DocName;
             //Указываем, что родительским контейнером 
             //нового экземпляра будет эта, главная форма.
             frm.MdiParent = this;
             //Вызываем форму
             frm.Show();
+        }
+
+        private void arrangeIconsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cascadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(MdiLayout.Cascade);
+        }
+
+        private void tileHorizosntalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(MdiLayout.TileHorizontal);
+        }
+
+        private void tileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(MdiLayout.TileVertical);
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+        
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            blank frm = (blank)this.ActiveMdiChild;
+            frm.Cut();
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            blank frm = (blank)this.ActiveMdiChild;
+            frm.Copy();
+        }
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            blank frm = (blank)this.ActiveMdiChild;
+            frm.Paste();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            blank frm = (blank)this.ActiveMdiChild;
+            frm.Delete();
+        }
+
+        private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            blank frm = (blank)this.ActiveMdiChild;
+            frm.SelectAll();
         }
     }
 }
