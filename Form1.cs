@@ -16,6 +16,7 @@ namespace lab_3
         public frmmain()
         {
             InitializeComponent();
+            saveToolStripMenuItem.Enabled = false;
         }
 
         private void frmmain_Load(object sender, EventArgs e)
@@ -65,7 +66,7 @@ namespace lab_3
         {
 
         }
-        
+
         private void cutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             blank frm = (blank)this.ActiveMdiChild;
@@ -94,6 +95,68 @@ namespace lab_3
         {
             blank frm = (blank)this.ActiveMdiChild;
             frm.SelectAll();
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void windowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Можно программно задавать доступные для обзора расширения файлов 
+            //openFileDialog1.Filter = "Text Files (*.txt)|*.txt|All Files(*.*)|*.*";
+
+
+            //Если выбран диалог открытия файла, выполняем условие
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                //Создаем новый документ
+                blank frm = new blank();
+                //Вызываем метод Open формы blank
+                frm.Open(openFileDialog1.FileName);
+                //Указываем, что родительской формой является форма frmmain
+                frm.MdiParent = this;
+                //Присваиваем переменной DocName имя открываемого файла
+                frm.DocName = openFileDialog1.FileName;
+                //Свойству Text формы присваиваем переменную DocName
+                frm.Text = frm.DocName;
+                //Вызываем форму frm
+                frm.Show();
+            }   
+            saveToolStripMenuItem.Enabled = true;
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Переключаем фокус на данную форму.
+            blank frm = (blank)this.ActiveMdiChild;
+            //Вызываем метод Save формы blank
+            frm.Save(frm.DocName);
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Если выбран диалог открытия файла, выполняем условие
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                //Переключаем фокус на данную форму.
+                blank frm = (blank)this.ActiveMdiChild;
+                //Вызываем метод Save формы blank
+                frm.Save(saveFileDialog1.FileName);
+                //Указываем, что родительской формой является форма frmmain
+                frm.MdiParent = this;
+                //Присваиваем переменной FileName имя сохраняемого файла
+                frm.DocName = saveFileDialog1.FileName;
+                //Свойству Text формы присваиваем переменную DocName
+                frm.Text = frm.DocName;
+            }
+            saveToolStripMenuItem.Enabled = true;
         }
     }
 }

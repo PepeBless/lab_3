@@ -1,4 +1,6 @@
-﻿namespace lab_3
+﻿using System.IO;
+
+namespace lab_3
 {
     partial class blank
     {
@@ -151,6 +153,48 @@
         {
             richTextBox1.SelectedText = "";
             this.BufferText = "";
+        }
+
+        //Создаем метод Open, в качестве параметра объявляем строку адреса  файла.
+        public void Open(string OpenFileName)
+        {
+            //Если файл не выбран, возвращаемся назад (появится встроенное предупреждение)
+            if (OpenFileName == "")
+            {
+                return;
+            }
+            else
+            {
+                //Создаем новый объект StreamReader и передаем ему переменную //OpenFileName
+                StreamReader sr = new StreamReader(OpenFileName);
+                //Читаем весь файл и записываем его в richTextBox1
+                richTextBox1.Text = sr.ReadToEnd();
+                // Закрываем поток
+                sr.Close();
+                //Переменной DocName присваиваем адресную строку
+                DocName = OpenFileName;
+            }
+        }
+
+        //Создаем метод Save, в качестве параметра объявляем строку адреса  файла.
+        public void Save(string SaveFileName)
+        {
+            //Если файл не выбран, возвращаемся назад (появится встроенное предупреждение)
+            if (SaveFileName == "")
+            {
+                return;
+            }
+            else
+            {
+                //Создаем новый объект StreamWriter и передаем ему переменную //OpenFileName
+                StreamWriter sw = new StreamWriter(SaveFileName);
+                //Содержимое richTextBox1 записываем в файл
+                sw.WriteLine(richTextBox1.Text);
+                //Закрываем поток
+                sw.Close();
+                //Устанавливаем в качестве имени документа название сохраненного файла
+                DocName = SaveFileName;
+            }
         }
 
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
