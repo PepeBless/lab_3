@@ -9,3 +9,5 @@ C:\Users\ensody\source\repos\lab_3\lab_3\obj\Debug\lab_3.csproj.CoreCompileInput
 C:\Users\ensody\source\repos\lab_3\lab_3\obj\Debug\lab_3.exe
 C:\Users\ensody\source\repos\lab_3\lab_3\obj\Debug\lab_3.pdb
 C:\Users\ensody\source\repos\lab_3\lab_3\obj\Debug\lab_3.blank.resources
+C:\Users\ensody\source\repos\lab_3\lab_3\obj\Debug\lab_3.FindForm.resources
+C:\Users\ensody\source\repos\lab_3\lab_3\obj\Debug\lab_3.About.resources
