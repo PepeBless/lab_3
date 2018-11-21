@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace lab_3
 {
@@ -238,6 +239,22 @@ namespace lab_3
             //Создаем новый экземпляр формы  About
             About frm = new About();
             frm.ShowDialog();
+        }
+
+        private void mnunotepadhelp_Click(object sender, EventArgs e)
+        {
+            try 
+            {
+                Process SysInfo = new Process();
+                SysInfo.StartInfo.ErrorDialog = true;
+                SysInfo.StartInfo.FileName = "notepadhelp.chm";
+                SysInfo.Start();
+
+            } 
+            catch 
+            {
+                //MessageBox.Show(ex.Message);
+            }
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

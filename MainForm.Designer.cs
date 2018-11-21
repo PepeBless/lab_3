@@ -53,6 +53,7 @@
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnunotepadhelp = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
@@ -271,7 +272,8 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutProgramToolStripMenuItem});
+            this.aboutProgramToolStripMenuItem,
+            this.mnunotepadhelp});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(24, 20);
             this.toolStripMenuItem1.Text = "?";
@@ -283,6 +285,14 @@
             this.aboutProgramToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.aboutProgramToolStripMenuItem.Text = "&About Program...";
             this.aboutProgramToolStripMenuItem.Click += new System.EventHandler(this.aboutProgramToolStripMenuItem_Click);
+            // 
+            // mnunotepadhelp
+            // 
+            this.mnunotepadhelp.Name = "mnunotepadhelp";
+            this.mnunotepadhelp.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.F1)));
+            this.mnunotepadhelp.Size = new System.Drawing.Size(203, 22);
+            this.mnunotepadhelp.Text = "Notepad C# Help";
+            this.mnunotepadhelp.Click += new System.EventHandler(this.mnunotepadhelp_Click);
             // 
             // openFileDialog1
             // 
@@ -430,6 +440,7 @@
         private System.Windows.Forms.ToolStripMenuItem tileVerticalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem aboutProgramToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnunotepadhelp;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
